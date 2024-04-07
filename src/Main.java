@@ -46,14 +46,10 @@ public class Main {
 
     private static Employee getEmployeeWithLowestSalary() {
         int lowestSalary = 10_000_000;
-        for (Employee employee : employees) {
-            if (lowestSalary > employee.getSalary()) {
-                lowestSalary = employee.getSalary();
-            }
-        }
         Employee employeeWithLowestSalary = employees[0];
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getSalary() == lowestSalary) {
+            if (employees[i].getSalary() < lowestSalary) {
+                lowestSalary = employees[i].getSalary();
                 employeeWithLowestSalary = employees[i];
             }
         }
@@ -62,14 +58,10 @@ public class Main {
 
     private static Employee getEmployeeWithHighestSalary() {
         int highestSalary = 0;
-        for (Employee employee : employees) {
-            if (highestSalary < employee.getSalary()) {
-                highestSalary = employee.getSalary();
-            }
-        }
         Employee employeeWithHighestSalary = employees[0];
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getSalary() == highestSalary) {
+            if (employees[i].getSalary() > highestSalary) {
+                highestSalary = employees[i].getSalary();
                 employeeWithHighestSalary = employees[i];
             }
         }
